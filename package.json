@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest src"
+    "dev": "nodemon src/index.js",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "NODE_ENV=TEST jest src --coverage",
+    "test:integration": "NODE_ENV=TEST jest test/integration",
+    "test:e2e": "NODE_ENV=TEST jest test/e2e",
+    "test:watch": "NODE_ENV=TEST jest src --watchAll"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,13 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "eslint": "^7.7.0"
+    "axios": "^0.19.2",
+    "eslint": "^7.7.0",
+    "jest": "^26.4.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

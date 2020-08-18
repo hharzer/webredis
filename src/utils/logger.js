@@ -1,8 +1,9 @@
 const winston = require('winston');
-const package = require('../../package.json');
+const packageJSON = require('../../package.json');
+const config = require('../config');
 
 const logger = winston.createLogger({
-  level: 'info',
+  level: config.logLevel,
   format: winston.format.combine(
     winston.format.colorize(),
     winston.format.timestamp({
@@ -11,7 +12,7 @@ const logger = winston.createLogger({
     winston.format.errors({ stack: true }),
     winston.format.simple()
   ),
-  defaultMeta: { app: package.name },
+  defaultMeta: { app: packageJSON.name },
   transports: [
     new winston.transports.Console()
   ],
