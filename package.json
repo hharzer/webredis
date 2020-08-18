@@ -1,0 +1,28 @@
+{
+  "name": "webredis",
+  "version": "1.0.0",
+  "description": "Web api for redis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinczedani/webredis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinczedani/webredis/issues"
+  },
+  "homepage": "https://github.com/vinczedani/webredis#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "redis": "^3.0.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0"
+  }
+}
