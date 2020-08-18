@@ -1,12 +1,11 @@
-version: "2.1"
+version: "3.8"
 services:
   app:
     build: .
     environment:
       - REDIS_HOST=redis
     depends_on:
-      redis:
-        condition: service_started
+      - redis
     ports:
       - "3000:3000"
   redis:

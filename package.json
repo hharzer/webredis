@@ -10,7 +10,8 @@
     "test:unit": "NODE_ENV=TEST jest src --coverage",
     "test:integration": "NODE_ENV=TEST jest test/integration",
     "test:e2e": "NODE_ENV=TEST jest test/e2e",
-    "test:watch": "NODE_ENV=TEST jest src --watchAll"
+    "test:watch": "NODE_ENV=TEST jest src --watchAll",
+    "compose:up": "docker-compose up --build"
   },
   "repository": {
     "type": "git",
