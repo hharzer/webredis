@@ -23,7 +23,7 @@ async function postKey(req, res) {
 
   logger.debug(`Completed setting new value for ${key}`, { key, result });
 
-  return res.json({ result });
+  return res.json({ success: result === 'OK' ? true : false });
 }
 
 async function deleteKey(req, res) {
@@ -31,11 +31,11 @@ async function deleteKey(req, res) {
 
   logger.debug(`Deleting value for ${key}`, { key });
 
-  const result = await redisController.deleteData(key);
+  const deletedCount = await redisController.deleteData(key);
 
-  logger.debug(`Completed deleting value for ${key}`, { key, result });
+  logger.debug(`Completed deleting value for ${key}`, { key, deletedCount });
 
-  return res.json({ result });
+  return res.json({ success: deletedCount >= 1 ? true : false });
 }
 
 module.exports = {

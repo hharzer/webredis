@@ -4,6 +4,7 @@ Web api for redis key value store
 # Developed with
 Node js version: `v12.2.0` (output of `node -v`)
 Docker version: `Docker version 19.03.12, build 48a66213fe` (output of `docker -v`)
+Time spent on this project: 5h
 
 # Available commands
 `npm start`: starts the server on the host machine

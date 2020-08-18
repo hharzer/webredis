@@ -57,7 +57,7 @@ describe('webredis', () => {
     const res = await request(server).post(`/${testKey}`).send(testData);
 
     expect(res.status).toBe(200);
-    expect(res.body).toEqual({ result: 'OK' });
+    expect(res.body).toEqual({ success: true });
     expect(redisService.set).toHaveBeenCalledTimes(1);
     const callData = redisService.set.mock.calls[0];
     expect(callData[0]).toBe(testKey);

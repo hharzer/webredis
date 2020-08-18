@@ -32,7 +32,7 @@ describe('E2E testing webredis', () => {
     const { status: postStatus, data: postData } = await set(testKey, testValue);
 
     expect(postStatus).toBe(200);
-    expect(postData).toEqual({ result: 'OK' });
+    expect(postData).toEqual({ success: true });
 
     const { status: getStatus, data: getData } = await get(testKey);
 
@@ -42,7 +42,7 @@ describe('E2E testing webredis', () => {
     const { status: delStatus, data: delData } = await del(testKey);
 
     expect(delStatus).toBe(200);
-    expect(delData.result).toBe(1);
+    expect(delData).toEqual({ success: true });
 
     const { status: get2Status, data: get2Data } = await get(testKey);
     expect(get2Status).toBe(404);
